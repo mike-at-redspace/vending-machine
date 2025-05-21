@@ -9,7 +9,7 @@ import { createCoin } from '../utils/svgUtils';
  * @param {Function} props.onClick - Click handler.
  * @returns {JSX.Element}
  */
-export function CoinButton({ coinType, onClick }) {
+function CoinButton({ coinType, onClick }) {
   const config = COIN_CONFIG[coinType];
   const { btnBg, btnHoverBg, btnTextColor, btnFocusRing, svgColor, label, id } =
     config;
@@ -34,3 +34,5 @@ export function CoinButton({ coinType, onClick }) {
     </button>
   );
 }
+
+export default CoinButton;

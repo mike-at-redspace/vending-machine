@@ -78,3 +78,9 @@ export const INITIAL_PRODUCTS = {
     textColor: 'text-blue-100',
   },
 };
+
+export const INITIAL_MACHINE_COINS = {
+  QUARTER: 5,
+  DIME: 5,
+  NICKEL: 5,
+};

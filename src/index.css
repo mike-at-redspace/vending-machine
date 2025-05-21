@@ -1,3 +1,5 @@
+@import 'tailwindcss';
+
 body {
   font-family: 'Lato', sans-serif;
   width: 100%;
@@ -67,4 +69,20 @@ body {
     transform: translateY(0) scale(1);
     opacity: 1;
   }
+}
+
+.product-grid {
+  @apply grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4;
+}
+.coin-section {
+  @apply bg-gray-200 p-4 rounded-lg shadow;
+}
+.coin-section-title {
+  @apply text-center text-gray-700 font-semibold mb-3 text-lg;
+}
+.coin-section-grid {
+  @apply grid grid-cols-3 gap-2 sm:gap-3;
+}
+.purchase-controls {
+  @apply grid grid-cols-2 gap-3 sm:gap-4;
 }

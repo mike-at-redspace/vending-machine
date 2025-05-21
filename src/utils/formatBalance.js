@@ -3,10 +3,12 @@
  * @param {number} balanceInCents
  * @returns {string}
  */
-export function formatBalance(balanceInCents) {
+function formatBalance(balanceInCents) {
   if (balanceInCents === 0) return '$0.00';
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
   }).format(balanceInCents / 100);
 }
+
+export default formatBalance;

@@ -1,5 +1,3 @@
-import React from 'react';
-
 /**
  * Product selection button for the vending machine.
  * @param {Object} props
@@ -9,7 +7,7 @@ import React from 'react';
  * @param {boolean} props.disabled - Whether the button is disabled.
  * @returns {JSX.Element}
  */
-export function ProductButton({ product, selected, onClick, disabled }) {
+function ProductButton({ product, selected, onClick, disabled }) {
   const { color, textColor, svg, name, price, stock } = product;
   return (
     <button
@@ -41,3 +39,5 @@ export function ProductButton({ product, selected, onClick, disabled }) {
     </button>
   );
 }
+
+export default ProductButton;

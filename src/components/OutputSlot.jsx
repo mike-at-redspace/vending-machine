@@ -1,5 +1,3 @@
-import React from 'react';
-
 /**
  * Output slot for dispensed items or change.
  * @param {Object} props
@@ -7,7 +5,7 @@ import React from 'react';
  * @param {React.ReactNode} props.children - Slot contents.
  * @returns {JSX.Element}
  */
-export function OutputSlot({ label, children }) {
+function OutputSlot({ label, children }) {
   return (
     <div className="bg-gray-700 p-4 rounded-lg shadow-inner min-h-[150px] flex flex-col items-center justify-center">
       <h4 className="text-gray-300 font-semibold mb-2">{label}</h4>
@@ -17,3 +15,5 @@ export function OutputSlot({ label, children }) {
     </div>
   );
 }
+
+export default OutputSlot;
