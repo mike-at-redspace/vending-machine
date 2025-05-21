@@ -1,12 +1,72 @@
-# React + Vite
+# Vending Machine Simulator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, interactive vending machine simulator built with React and TailwindCSS. Simulate inserting coins, selecting products, making purchases, and receiving change—all in a sleek, responsive UI.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Insert coins of various denominations
+- Select products from a grid
+- Purchase products and receive change
+- Realistic coin and product visuals
+- Machine state panel for debugging
+- Responsive and accessible design
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React** (functional components & hooks)
+- **TailwindCSS** for styling
+- **Vite** for fast development
+- **Jest** for testing
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18+ recommended)
+- npm or yarn
+
+### Installation
+
+```bash
+npm install
+# or
+yarn install
+```
+
+### Running the App
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view the app in your browser.
+
+### Running Tests
+
+```bash
+npm test
+# or
+yarn test
+```
+
+## Project Structure
+
+```
+src/
+  components/      # Reusable UI components
+  hooks/           # Custom React hooks
+  utils/           # Utility functions (formatting, SVG, etc.)
+  assets/          # Images, icons, and audio
+  App.jsx          # Main app component
+  index.css        # TailwindCSS styles
+```
+
+## Credits
+
+Created by [mike-at-redspace](https://github.com/mike-at-redspace)
+
+---
+
+This project is for educational and demonstration purposes.
