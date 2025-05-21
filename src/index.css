@@ -20,14 +20,16 @@ body {
     border-radius: 10px;
     box-shadow: 0px 0px 50px #000000ee inset;
     pre {
-      text-shadow: 0px 0px 20px #00ffffcc;
       font-family: 'Digital-7 Mono', monospace;
-      color: #00ffffcc;
-      &.text-red-300 {
+      &.blue {
+        color: #00ffffcc;
+        text-shadow: 0px 0px 20px #00ffffcc;
+      }
+      &.red {
         color: #ff9999cc;
         text-shadow: 0px 0px 20px #ff0000cc;
       }
-      &.text-green-300 {
+      &.green {
         color: #00ff77cc;
         text-shadow: 0px 0px 20px #00ff00cc;
       }

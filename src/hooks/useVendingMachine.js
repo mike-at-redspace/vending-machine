@@ -80,7 +80,7 @@ export function useVendingMachine() {
     setDeposit({ ...INITIAL_DEPOSITED_COINS })
     setSelectedId(null)
     if (clearMessage) {
-      displayMsg('Transaction reset.\nPlease start over.')
+      displayMsg('Transaction reset\nPlease start over')
     }
   }
 
@@ -93,7 +93,7 @@ export function useVendingMachine() {
 
     setBalance(prev => prev + COIN_VALUES[coinType])
     displayMsg(
-      `Deposited ${coinType.toLowerCase()} (${COIN_VALUES[coinType]}¢).`,
+      `Deposited ${coinType.toLowerCase()} (${COIN_VALUES[coinType]}¢)`,
       'success'
     )
     clearSlots()
@@ -103,7 +103,7 @@ export function useVendingMachine() {
     const item = items[id]
     if (item.stock <= 0) {
       displayMsg(
-        `${item.name} is out of stock. Please select another item.`,
+        `${item.name} is out of stock\nPlease select another item`,
         'error'
       )
       setSelectedId(null)
@@ -112,7 +112,7 @@ export function useVendingMachine() {
     playBeep()
     setSelectedId(id)
     displayMsg(
-      `${item.name} selected (${item.price}¢).\nPress Purchase or Cancel.`,
+      `${item.name} selected (${item.price}¢).\nPress Purchase or Cancel`,
       'info'
     )
     clearSlots()
@@ -238,11 +238,7 @@ export function useVendingMachine() {
     items[selectedId]?.stock > 0
 
   const textColorClass =
-    msgType === 'error'
-      ? 'text-red-300'
-      : msgType === 'success'
-        ? 'text-green-300'
-        : 'text-white'
+    msgType === 'error' ? 'red' : msgType === 'success' ? 'green' : 'blue'
 
   return {
     coins,
