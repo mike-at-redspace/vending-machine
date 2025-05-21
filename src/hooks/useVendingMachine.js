@@ -232,6 +232,18 @@ export function useVendingMachine() {
     resetTxn()
   }
 
+  const canPurchase =
+    !!selectedId &&
+    items[selectedId]?.price <= balance &&
+    items[selectedId]?.stock > 0
+
+  const textColorClass =
+    msgType === 'error'
+      ? 'text-red-300'
+      : msgType === 'success'
+        ? 'text-green-300'
+        : 'text-white'
+
   return {
     coins,
     items,
@@ -239,10 +251,11 @@ export function useVendingMachine() {
     balance,
     selectedId,
     msg,
-    msgType,
     dispensed,
     change,
     showState,
+    canPurchase,
+    textColorClass,
     setShowState,
     handleCoin,
     handleSelect,

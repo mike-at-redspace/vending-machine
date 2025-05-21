@@ -36,28 +36,17 @@ function App() {
     balance,
     selectedId,
     msg,
-    msgType,
     dispensed,
     change,
     showState,
     setShowState,
+    canPurchase,
+    textColorClass,
     handleCoin,
     handleSelect,
     handleCancel,
     handlePurchase
   } = useVendingMachine()
-
-  const canPurchase =
-    !!selectedId &&
-    items[selectedId]?.price <= balance &&
-    items[selectedId]?.stock > 0
-
-  const textColorClass =
-    msgType === 'error'
-      ? 'text-red-300'
-      : msgType === 'success'
-        ? 'text-green-300'
-        : 'text-white'
 
   return (
     <div className='min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4 selection:bg-indigo-500 selection:text-white'>
