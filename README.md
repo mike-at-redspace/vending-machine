@@ -47,14 +47,6 @@ yarn dev
 
 Open [http://localhost:5173](http://localhost:5173) to view the app in your browser.
 
-### Running Tests
-
-```bash
-npm test
-# or
-yarn test
-```
-
 ## Project Structure
 
 ```
