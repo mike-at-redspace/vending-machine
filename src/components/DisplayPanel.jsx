@@ -1,4 +1,4 @@
-import formatBalance from '../utils/formatBalance';
+import formatBalance from '../utils/formatBalance'
 
 /**
  * DisplayPanel component for showing messages and balance.
@@ -10,17 +10,17 @@ import formatBalance from '../utils/formatBalance';
  */
 function DisplayPanel({ msg, textColorClass, balance }) {
   return (
-    <div className="bg-gray-800 text-white p-4 rounded-lg shadow-inner text-center">
+    <div className='bg-gray-800 text-white p-4 rounded-lg shadow-inner text-center'>
       <pre
         className={`text-lg sm:text-xl font-medium min-h-[3em] flex items-center justify-center whitespace-pre-wrap ${textColorClass}`}
       >
         {msg}
       </pre>
-      <p className="text-2xl sm:text-3xl font-bold mt-1">
+      <p className='text-2xl sm:text-3xl font-bold mt-1'>
         Balance: {formatBalance(balance)}
       </p>
     </div>
-  );
+  )
 }
 
-export default DisplayPanel;
+export default DisplayPanel

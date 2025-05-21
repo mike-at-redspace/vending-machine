@@ -8,7 +8,7 @@
  * @returns {JSX.Element}
  */
 function ProductButton({ product, selected, onClick, disabled }) {
-  const { color, textColor, svg, name, price, stock } = product;
+  const { color, textColor, svg, name, price, stock } = product
   return (
     <button
       onClick={onClick}
@@ -24,11 +24,11 @@ function ProductButton({ product, selected, onClick, disabled }) {
             `}
     >
       <div
-        className="flex justify-center items-center h-24 sm:h-32"
+        className='flex justify-center items-center h-24 sm:h-32'
         dangerouslySetInnerHTML={{ __html: svg }}
       />
-      <p className="font-semibold text-sm sm:text-md">{name}</p>
-      <p className="text-xs sm:text-sm">{price}¢</p>
+      <p className='font-semibold text-sm sm:text-md'>{name}</p>
+      <p className='text-xs sm:text-sm'>{price}¢</p>
       <p
         className={`text-xs sm:text-sm font-medium ${
           disabled ? 'text-red-900 dark:text-red-300' : 'text-inherit'
@@ -37,7 +37,7 @@ function ProductButton({ product, selected, onClick, disabled }) {
         <b>{stock > 0 ? `Stock: ${stock}` : 'OUT OF STOCK'}</b>
       </p>
     </button>
-  );
+  )
 }
 
-export default ProductButton;
+export default ProductButton

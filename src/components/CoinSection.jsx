@@ -1,5 +1,5 @@
-import CoinButton from './CoinButton';
-import { ORDERED_COIN_TYPES } from '../CONSTANTS';
+import CoinButton from './CoinButton'
+import { ORDERED_COIN_TYPES } from '../CONSTANTS'
 
 /**
  * Renders a section for inserting coins, displaying a button for each coin type.
@@ -11,10 +11,10 @@ import { ORDERED_COIN_TYPES } from '../CONSTANTS';
  */
 function CoinSection({ handleCoin }) {
   return (
-    <div className="coin-section">
-      <h3 className="coin-section-title">Insert Coins</h3>
-      <div className="coin-section-grid">
-        {ORDERED_COIN_TYPES.map((coinType) => (
+    <div className='coin-section'>
+      <h3 className='coin-section-title'>Insert Coins</h3>
+      <div className='coin-section-grid'>
+        {ORDERED_COIN_TYPES.map(coinType => (
           <CoinButton
             key={coinType}
             coinType={coinType}
@@ -23,7 +23,7 @@ function CoinSection({ handleCoin }) {
         ))}
       </div>
     </div>
-  );
+  )
 }
 
-export default CoinSection;
+export default CoinSection

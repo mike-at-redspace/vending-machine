@@ -1,8 +1,8 @@
-import js from '@eslint/js';
-import globals from 'globals';
-import reactHooks from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh';
-import prettier from 'eslint-config-prettier';
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import prettier from 'eslint-config-prettier'
 
 export default [
   { ignores: ['dist'] },
@@ -21,9 +21,9 @@ export default [
         afterEach: 'readonly',
         beforeAll: 'readonly',
         afterAll: 'readonly',
-        jest: 'readonly',
-      },
-    },
+        jest: 'readonly'
+      }
+    }
   },
   // Configuration for Jest configuration files
   {
@@ -32,9 +32,9 @@ export default [
       globals: {
         module: 'writable',
         process: 'readonly',
-        require: 'readonly',
-      },
-    },
+        require: 'readonly'
+      }
+    }
   },
   {
     files: ['**/*.{js,jsx}'],
@@ -44,12 +44,12 @@ export default [
       parserOptions: {
         ecmaVersion: 'latest',
         ecmaFeatures: { jsx: true },
-        sourceType: 'module',
-      },
+        sourceType: 'module'
+      }
     },
     plugins: {
       'react-hooks': reactHooks,
-      'react-refresh': reactRefresh,
+      'react-refresh': reactRefresh
     },
     rules: {
       ...js.configs.recommended.rules,
@@ -57,8 +57,8 @@ export default [
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
       'react-refresh/only-export-components': [
         'warn',
-        { allowConstantExport: true },
-      ],
-    },
-  },
-];
+        { allowConstantExport: true }
+      ]
+    }
+  }
+]

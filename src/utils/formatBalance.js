@@ -4,11 +4,11 @@
  * @returns {string}
  */
 function formatBalance(balanceInCents) {
-  if (balanceInCents === 0) return '$0.00';
+  if (balanceInCents === 0) return '$0.00'
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency: 'USD',
-  }).format(balanceInCents / 100);
+    currency: 'USD'
+  }).format(balanceInCents / 100)
 }
 
-export default formatBalance;
+export default formatBalance

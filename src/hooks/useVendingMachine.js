@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import formatBalance from '../utils/formatBalance';
+import { useState } from 'react'
+import formatBalance from '../utils/formatBalance'
 import {
   INITIAL_PRODUCTS,
   ORDERED_COIN_TYPES,
   COIN_VALUES,
   INITIAL_DEPOSITED_COINS,
-  INITIAL_MACHINE_COINS,
-} from '../CONSTANTS';
-import { useAudio } from './useAudio';
+  INITIAL_MACHINE_COINS
+} from '../CONSTANTS'
+import { useAudio } from './useAudio'
 
 /**
  * Custom React hook to manage the state and logic of a vending machine.
@@ -36,143 +36,143 @@ import { useAudio } from './useAudio';
  * @returns {Function} formatBalance - Formats a balance (in cents) as a string.
  */
 export function useVendingMachine() {
-  const [coins, setCoins] = useState(INITIAL_MACHINE_COINS);
-  const [items, setItems] = useState(INITIAL_PRODUCTS);
-  const [deposit, setDeposit] = useState(INITIAL_DEPOSITED_COINS);
-  const [balance, setBalance] = useState(0);
-  const [selectedId, setSelectedId] = useState(null);
-  const [msg, setMsg] = useState('Welcome!\nInsert coins or select a product.');
-  const [msgType, setMsgType] = useState('info');
-  const [dispensed, setDispensed] = useState(null);
-  const [change, setChange] = useState(null);
-  const [showState, setShowState] = useState(false);
+  const [coins, setCoins] = useState(INITIAL_MACHINE_COINS)
+  const [items, setItems] = useState(INITIAL_PRODUCTS)
+  const [deposit, setDeposit] = useState(INITIAL_DEPOSITED_COINS)
+  const [balance, setBalance] = useState(0)
+  const [selectedId, setSelectedId] = useState(null)
+  const [msg, setMsg] = useState('Welcome!\nInsert coins or select a product.')
+  const [msgType, setMsgType] = useState('info')
+  const [dispensed, setDispensed] = useState(null)
+  const [change, setChange] = useState(null)
+  const [showState, setShowState] = useState(false)
 
-  const playCoin = useAudio('./src/assets/mp3/coin-drop.mp3');
-  const playBeep = useAudio('./src/assets/mp3/beep.mp3');
-  const playPurchase = useAudio('./src/assets/mp3/purchase.mp3');
+  const playCoin = useAudio('./src/assets/mp3/coin-drop.mp3')
+  const playBeep = useAudio('./src/assets/mp3/beep.mp3')
+  const playPurchase = useAudio('./src/assets/mp3/purchase.mp3')
 
   const displayMsg = (text, type = 'info', duration = null) => {
-    setMsg(text);
-    setMsgType(type);
+    setMsg(text)
+    setMsgType(type)
     if (duration) {
       setTimeout(() => {
-        setMsg((prev) =>
+        setMsg(prev =>
           text === prev
             ? 'Thank you!\nSelect another item or insert coins'
-            : prev,
-        );
-        setMsgType('info');
-        clearSlots();
-      }, duration);
+            : prev
+        )
+        setMsgType('info')
+        clearSlots()
+      }, duration)
     }
-  };
+  }
 
   const clearSlots = () => {
-    setDispensed(null);
-    setChange(null);
-  };
+    setDispensed(null)
+    setChange(null)
+  }
 
   const resetTxn = (clearMessage = false) => {
-    setBalance(0);
-    setDeposit({ ...INITIAL_DEPOSITED_COINS });
-    setSelectedId(null);
+    setBalance(0)
+    setDeposit({ ...INITIAL_DEPOSITED_COINS })
+    setSelectedId(null)
     if (clearMessage) {
-      displayMsg('Transaction reset.\nPlease start over.');
+      displayMsg('Transaction reset.\nPlease start over.')
     }
-  };
+  }
 
   function handleCoin(coinType) {
-    playCoin();
-    setDeposit((prev) => ({
+    playCoin()
+    setDeposit(prev => ({
       ...prev,
-      [coinType]: prev[coinType] + 1,
-    }));
+      [coinType]: prev[coinType] + 1
+    }))
 
-    setBalance((prev) => prev + COIN_VALUES[coinType]);
+    setBalance(prev => prev + COIN_VALUES[coinType])
     displayMsg(
       `Deposited ${coinType.toLowerCase()} (${COIN_VALUES[coinType]}¢).`,
-      'success',
-    );
-    clearSlots();
+      'success'
+    )
+    clearSlots()
   }
 
   function handleSelect(id) {
-    const item = items[id];
+    const item = items[id]
     if (item.stock <= 0) {
       displayMsg(
         `${item.name} is out of stock. Please select another item.`,
-        'error',
-      );
-      setSelectedId(null);
-      return;
+        'error'
+      )
+      setSelectedId(null)
+      return
     }
-    playBeep();
-    setSelectedId(id);
+    playBeep()
+    setSelectedId(id)
     displayMsg(
       `${item.name} selected (${item.price}¢).\nPress Purchase or Cancel.`,
-      'info',
-    );
-    clearSlots();
+      'info'
+    )
+    clearSlots()
   }
 
   function handleCancel() {
     if (balance === 0 && !selectedId) {
-      displayMsg('Nothing to cancel\nInsert coins or select an item', 'error');
-      return;
+      displayMsg('Nothing to cancel\nInsert coins or select an item', 'error')
+      return
     }
-    const returnedAmount = balance;
-    let message = 'Transaction cancelled.';
+    const returnedAmount = balance
+    let message = 'Transaction cancelled.'
     if (returnedAmount > 0) {
-      message += `\n${formatBalance(returnedAmount)} returned`;
+      message += `\n${formatBalance(returnedAmount)} returned`
     }
-    message += '\nPlease start over';
+    message += '\nPlease start over'
 
-    displayMsg(message, 'error');
-    resetTxn();
-    clearSlots();
+    displayMsg(message, 'error')
+    resetTxn()
+    clearSlots()
   }
 
   function handlePurchase() {
     if (!selectedId) {
-      displayMsg('Please select an item first', 'error');
-      return;
+      displayMsg('Please select an item first', 'error')
+      return
     }
-    const item = items[selectedId];
+    const item = items[selectedId]
 
     if (item.stock <= 0) {
       displayMsg(
         `${item.name} is out of stock, Transaction cancelled!`,
-        'error',
-      );
-      resetTxn();
-      clearSlots();
-      return;
+        'error'
+      )
+      resetTxn()
+      clearSlots()
+      return
     }
     if (balance < item.price) {
       displayMsg(
         `Insufficient funds for ${item.name}\nNeed ${
           item.price - balance
         }¢ more`,
-        'error',
-      );
-      return;
+        'error'
+      )
+      return
     }
 
-    let changeToMake = balance - item.price;
-    const coinsToGive = { ...INITIAL_DEPOSITED_COINS };
-    const tempCoins = { ...coins };
+    let changeToMake = balance - item.price
+    const coinsToGive = { ...INITIAL_DEPOSITED_COINS }
+    const tempCoins = { ...coins }
 
     if (changeToMake > 0) {
       for (const coinType of ORDERED_COIN_TYPES) {
-        const value = COIN_VALUES[coinType];
-        const available = tempCoins[coinType];
-        const needed = Math.floor(changeToMake / value);
-        const toUse = Math.min(needed, available);
+        const value = COIN_VALUES[coinType]
+        const available = tempCoins[coinType]
+        const needed = Math.floor(changeToMake / value)
+        const toUse = Math.min(needed, available)
 
         if (toUse > 0) {
-          coinsToGive[coinType] += toUse;
-          tempCoins[coinType] -= toUse;
-          changeToMake -= toUse * value;
+          coinsToGive[coinType] += toUse
+          tempCoins[coinType] -= toUse
+          changeToMake -= toUse * value
         }
       }
     }
@@ -182,51 +182,51 @@ export function useVendingMachine() {
         `Machine cannot make exact change for ${
           balance - item.price
         }¢\nTransaction cancelled\nYour ${formatBalance(balance)} is returned`,
-        'error',
-      );
-      resetTxn();
-      clearSlots();
-      return;
+        'error'
+      )
+      resetTxn()
+      clearSlots()
+      return
     }
 
-    playPurchase();
+    playPurchase()
 
-    setItems((prev) => ({
+    setItems(prev => ({
       ...prev,
       [selectedId]: {
         ...prev[selectedId],
-        stock: prev[selectedId].stock - 1,
-      },
-    }));
+        stock: prev[selectedId].stock - 1
+      }
+    }))
 
-    setCoins((cur) => {
-      const newCoins = { ...cur };
+    setCoins(cur => {
+      const newCoins = { ...cur }
       for (const coinType in deposit) {
-        newCoins[coinType] += deposit[coinType];
+        newCoins[coinType] += deposit[coinType]
       }
       for (const coinType in coinsToGive) {
-        newCoins[coinType] -= coinsToGive[coinType];
+        newCoins[coinType] -= coinsToGive[coinType]
       }
-      return newCoins;
-    });
+      return newCoins
+    })
 
-    const dispChange = balance - item.price;
+    const dispChange = balance - item.price
 
     displayMsg(
       `${item.name} dispensed!\nChange: ${formatBalance(dispChange)}`,
       'success',
-      5000,
-    );
+      5000
+    )
     setDispensed({
       name: item.name,
       svg: item.svg,
-      color: item.color,
-    });
+      color: item.color
+    })
     if (dispChange > 0) {
-      setChange(coinsToGive);
+      setChange(coinsToGive)
     }
 
-    resetTxn();
+    resetTxn()
   }
 
   return {
@@ -245,6 +245,6 @@ export function useVendingMachine() {
     handleSelect,
     handleCancel,
     handlePurchase,
-    formatBalance,
-  };
+    formatBalance
+  }
 }

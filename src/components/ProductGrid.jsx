@@ -1,4 +1,4 @@
-import ProductButton from './ProductButton';
+import ProductButton from './ProductButton'
 
 /**
  * Renders a grid of product buttons for selection.
@@ -11,7 +11,7 @@ import ProductButton from './ProductButton';
  */
 function ProductGrid({ items, selectedId, handleSelect }) {
   return (
-    <div className="product-grid">
+    <div className='product-grid'>
       {Object.entries(items).map(([id, item]) => (
         <ProductButton
           key={id}
@@ -23,7 +23,7 @@ function ProductGrid({ items, selectedId, handleSelect }) {
         />
       ))}
     </div>
-  );
+  )
 }
 
-export default ProductGrid;
+export default ProductGrid

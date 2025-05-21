@@ -1,6 +1,6 @@
-import OutputSlot from './OutputSlot';
-import { ORDERED_COIN_TYPES, COIN_CONFIG } from '../CONSTANTS';
-import { createCoin } from '../utils/svgUtils';
+import OutputSlot from './OutputSlot'
+import { ORDERED_COIN_TYPES, COIN_CONFIG } from '../CONSTANTS'
+import { createCoin } from '../utils/svgUtils'
 
 /**
  * ChangeReturn component for displaying returned change coins.
@@ -11,32 +11,32 @@ import { createCoin } from '../utils/svgUtils';
  */
 function ChangeReturn({ change, balance, selectedId }) {
   return (
-    <OutputSlot label="Change Return">
-      {change && ORDERED_COIN_TYPES.some((type) => change[type] > 0) ? (
-        ORDERED_COIN_TYPES.map((coinType) =>
+    <OutputSlot label='Change Return'>
+      {change && ORDERED_COIN_TYPES.some(type => change[type] > 0) ? (
+        ORDERED_COIN_TYPES.map(coinType =>
           Array(change[coinType] || 0)
             .fill(0)
             .map((_, i) => {
-              const { label, svgColor, displaySize } = COIN_CONFIG[coinType];
+              const { label, svgColor, displaySize } = COIN_CONFIG[coinType]
               return (
                 <div
                   key={`${coinType}-${i}`}
-                  className="change-coin-item"
+                  className='change-coin-item'
                   title={`${coinType} (${label})`}
                   dangerouslySetInnerHTML={{
-                    __html: createCoin(svgColor, label, displaySize),
+                    __html: createCoin(svgColor, label, displaySize)
                   }}
                 />
-              );
-            }),
+              )
+            })
         )
       ) : balance > 0 && !selectedId ? (
-        <p className="text-gray-400 text-sm">Awaiting transaction...</p>
+        <p className='text-gray-400 text-sm'>Awaiting transaction...</p>
       ) : (
-        <p className="text-gray-400 text-sm">Empty</p>
+        <p className='text-gray-400 text-sm'>Empty</p>
       )}
     </OutputSlot>
-  );
+  )
 }
 
-export default ChangeReturn;
+export default ChangeReturn

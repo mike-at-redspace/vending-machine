@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef } from 'react'
 
 /**
  * Custom React hook to play an audio file from a given URL.
@@ -7,15 +7,15 @@ import { useRef } from 'react';
  * @returns {Function} play - Function to play the audio from the beginning.
  */
 export function useAudio(url) {
-  const audioRef = useRef(null);
+  const audioRef = useRef(null)
 
   function play() {
     if (!audioRef.current) {
-      audioRef.current = new window.Audio(url);
+      audioRef.current = new window.Audio(url)
     }
-    audioRef.current.currentTime = 0;
-    audioRef.current.play();
+    audioRef.current.currentTime = 0
+    audioRef.current.play()
   }
 
-  return play;
+  return play
 }

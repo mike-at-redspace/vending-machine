@@ -1,4 +1,4 @@
-import { createCan, createBottle } from './utils/svgUtils';
+import { createCan, createBottle } from './utils/svgUtils'
 
 export const COIN_CONFIG = {
   NICKEL: {
@@ -10,7 +10,7 @@ export const COIN_CONFIG = {
     btnBg: 'bg-neutral-300',
     btnHoverBg: 'hover:bg-neutral-400',
     btnFocusRing: 'focus:ring-neutral-500',
-    btnTextColor: 'text-neutral-800',
+    btnTextColor: 'text-neutral-800'
   },
   DIME: {
     id: 'DIME',
@@ -21,7 +21,7 @@ export const COIN_CONFIG = {
     btnBg: 'bg-gray-300',
     btnHoverBg: 'hover:bg-gray-400',
     btnFocusRing: 'focus:ring-gray-500',
-    btnTextColor: 'text-gray-800',
+    btnTextColor: 'text-gray-800'
   },
   QUARTER: {
     id: 'QUARTER',
@@ -32,17 +32,17 @@ export const COIN_CONFIG = {
     btnBg: 'bg-slate-300',
     btnHoverBg: 'hover:bg-slate-400',
     btnFocusRing: 'focus:ring-slate-500',
-    btnTextColor: 'text-slate-800',
-  },
-};
+    btnTextColor: 'text-slate-800'
+  }
+}
 
-export const ORDERED_COIN_TYPES = ['QUARTER', 'DIME', 'NICKEL'];
+export const ORDERED_COIN_TYPES = ['QUARTER', 'DIME', 'NICKEL']
 
 export const COIN_VALUES = Object.fromEntries(
-  ORDERED_COIN_TYPES.map((type) => [type, COIN_CONFIG[type].value]),
-);
+  ORDERED_COIN_TYPES.map(type => [type, COIN_CONFIG[type].value])
+)
 
-export const INITIAL_DEPOSITED_COINS = { QUARTER: 0, DIME: 0, NICKEL: 0 };
+export const INITIAL_DEPOSITED_COINS = { QUARTER: 0, DIME: 0, NICKEL: 0 }
 
 export const INITIAL_PRODUCTS = {
   COLA: {
@@ -51,7 +51,7 @@ export const INITIAL_PRODUCTS = {
     stock: 10,
     svg: createCan('#E53E3E', 'COLA'),
     color: 'bg-red-500',
-    textColor: 'text-red-100',
+    textColor: 'text-red-100'
   },
   DIET_COLA: {
     name: 'Diet',
@@ -59,7 +59,7 @@ export const INITIAL_PRODUCTS = {
     stock: 8,
     svg: createCan('#4A5568', 'DIET'),
     color: 'bg-gray-700',
-    textColor: 'text-gray-100',
+    textColor: 'text-gray-100'
   },
   LIME_SODA: {
     name: 'Lime',
@@ -67,7 +67,7 @@ export const INITIAL_PRODUCTS = {
     stock: 0,
     svg: createCan('#48BB78', 'LIME'),
     color: 'bg-green-500',
-    textColor: 'text-green-100',
+    textColor: 'text-green-100'
   },
   WATER: {
     name: 'H₂O',
@@ -75,12 +75,12 @@ export const INITIAL_PRODUCTS = {
     stock: 2,
     svg: createBottle('#3182CE', 'H₂O'),
     color: 'bg-blue-600',
-    textColor: 'text-blue-100',
-  },
-};
+    textColor: 'text-blue-100'
+  }
+}
 
 export const INITIAL_MACHINE_COINS = {
   QUARTER: 5,
   DIME: 5,
-  NICKEL: 5,
-};
+  NICKEL: 5
+}

@@ -1,4 +1,4 @@
-import { useVendingMachine } from './hooks/useVendingMachine';
+import { useVendingMachine } from './hooks/useVendingMachine'
 import {
   ProductGrid,
   CoinSection,
@@ -7,8 +7,8 @@ import {
   DisplayPanel,
   Footer,
   ChangeReturn,
-  MachineStatePanel,
-} from './components';
+  MachineStatePanel
+} from './components'
 
 /**
  * Main application component for the vending machine UI
@@ -45,24 +45,24 @@ function App() {
     handleSelect,
     handleCancel,
     handlePurchase,
-    formatBalance,
-  } = useVendingMachine();
+    formatBalance
+  } = useVendingMachine()
 
   const canPurchase =
     !!selectedId &&
     items[selectedId]?.price <= balance &&
-    items[selectedId]?.stock > 0;
+    items[selectedId]?.stock > 0
 
   const textColorClass =
     msgType === 'error'
       ? 'text-red-300'
       : msgType === 'success'
         ? 'text-green-300'
-        : 'text-white';
+        : 'text-white'
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4 selection:bg-indigo-500 selection:text-white">
-      <div className="vending-machine-bg w-full max-w-2xl lg:max-w-4xl rounded-xl shadow-2xl p-4 sm:p-6 md:p-8 space-y-6">
+    <div className='min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4 selection:bg-indigo-500 selection:text-white'>
+      <div className='vending-machine-bg w-full max-w-2xl lg:max-w-4xl rounded-xl shadow-2xl p-4 sm:p-6 md:p-8 space-y-6'>
         <DisplayPanel
           msg={msg}
           textColorClass={textColorClass}
@@ -82,7 +82,7 @@ function App() {
           handleCancel={handleCancel}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mt-4'>
           <DispenseSlot dispensed={dispensed} />
           <ChangeReturn
             change={change}
@@ -101,7 +101,7 @@ function App() {
       </div>
       <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

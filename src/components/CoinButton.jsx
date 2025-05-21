@@ -1,5 +1,5 @@
-import { COIN_CONFIG } from '../CONSTANTS';
-import { createCoin } from '../utils/svgUtils';
+import { COIN_CONFIG } from '../CONSTANTS'
+import { createCoin } from '../utils/svgUtils'
 
 /**
  * Coin insertion button for the vending machine.
@@ -9,10 +9,10 @@ import { createCoin } from '../utils/svgUtils';
  * @returns {JSX.Element}
  */
 function CoinButton({ coinType, onClick }) {
-  const config = COIN_CONFIG[coinType];
+  const config = COIN_CONFIG[coinType]
   const { btnBg, btnHoverBg, btnTextColor, btnFocusRing, svgColor, label, id } =
-    config;
-  const coinIconSize = '24';
+    config
+  const coinIconSize = '24'
 
   return (
     <button
@@ -22,16 +22,16 @@ function CoinButton({ coinType, onClick }) {
             `}
     >
       <span
-        className="hidden sm:inline"
+        className='hidden sm:inline'
         dangerouslySetInnerHTML={{
-          __html: createCoin(svgColor, label, coinIconSize),
+          __html: createCoin(svgColor, label, coinIconSize)
         }}
       />
       <span>
         {id} ({label})
       </span>
     </button>
-  );
+  )
 }
 
-export default CoinButton;
+export default CoinButton
