@@ -1,11 +1,11 @@
 /**
- * Renders purchase and cancel buttons for a vending machine interface.
+ * Renders purchase and cancel buttons for a vending machine interface
  *
  * @component
  * @param {Object} props
- * @param {boolean} props.canPurchase - Determines if the purchase button is enabled.
- * @param {function} props.handlePurchase - Callback invoked when the purchase button is clicked.
- * @param {function} props.handleCancel - Callback invoked when the cancel button is clicked.
+ * @param {boolean} props.canPurchase - Determines if the purchase button is enabled
+ * @param {function} props.handlePurchase - Callback invoked when the purchase button is clicked
+ * @param {function} props.handleCancel - Callback invoked when the cancel button is clicked
  */
 function PurchaseControls({ canPurchase, handlePurchase, handleCancel }) {
   return (

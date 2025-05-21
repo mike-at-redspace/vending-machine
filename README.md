@@ -11,7 +11,7 @@ A modern, interactive vending machine simulator built with React and TailwindCSS
 - Insert coins of various denominations
 - Select products from a grid
 - Purchase products and receive change
-- Realistic coin and product visuals
+- "Realistic" coin and product visuals
 - Machine state panel for debugging
 - Responsive and accessible design
 

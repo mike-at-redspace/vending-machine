@@ -1,10 +1,10 @@
 import { useRef } from 'react'
 
 /**
- * Custom React hook to play an audio file from a given URL.
+ * Custom React hook to play an audio file from a given URL
  *
- * @param {string} url - The URL of the audio file to play.
- * @returns {Function} play - Function to play the audio from the beginning.
+ * @param {string} url - The URL of the audio file to play
+ * @returns {Function} play - Function to play the audio from the beginning
  */
 export function useAudio(url) {
   const audioRef = useRef(null)

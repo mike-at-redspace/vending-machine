@@ -3,11 +3,12 @@ import { ORDERED_COIN_TYPES, COIN_CONFIG } from '../CONSTANTS'
 import { createCoin } from '../utils/svgUtils'
 
 /**
- * ChangeReturn component for displaying returned change coins.
+ * ChangeReturn component for displaying returned change coins
+ *
  * @param {object} props
- * @param {object} props.change - The change object mapping coin types to counts.
- * @param {number} props.balance - Current balance.
- * @param {string|null} props.selectedId - Currently selected product id.
+ * @param {object} props.change - The change object mapping coin types to counts
+ * @param {number} props.balance - Current balance
+ * @param {string|null} props.selectedId - Currently selected product index
  */
 function ChangeReturn({ change, balance, selectedId }) {
   return (

@@ -1,13 +1,13 @@
 import ProductButton from './ProductButton'
 
 /**
- * Renders a grid of product buttons for selection.
+ * Renders a grid of product buttons for selection
  *
  * @component
  * @param {Object} props
- * @param {Object.<string, { stock: number, [key: string]: any }>} props.items - An object mapping product IDs to product data.
- * @param {string} props.selectedId - The ID of the currently selected product.
- * @param {function(string): void} props.handleSelect - Callback invoked when a product is selected, receives the product ID.
+ * @param {Object.<string, { stock: number, [key: string]: any }>} props.items - An object mapping product IDs to product data
+ * @param {string} props.selectedId - The ID of the currently selected product
+ * @param {function(string): void} props.handleSelect - Callback invoked when a product is selected, receives the product index
  */
 function ProductGrid({ items, selectedId, handleSelect }) {
   return (

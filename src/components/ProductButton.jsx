@@ -1,10 +1,11 @@
 /**
- * Product selection button for the vending machine.
+ * Product selection button for the vending machine
+ *
  * @param {Object} props
- * @param {Object} props.product - Product data.
- * @param {boolean} props.selected - Whether this product is selected.
- * @param {Function} props.onClick - Click handler.
- * @param {boolean} props.disabled - Whether the button is disabled.
+ * @param {Object} props.product - Product data
+ * @param {boolean} props.selected - Whether this product is selected
+ * @param {Function} props.onClick - Click handler
+ * @param {boolean} props.disabled - Whether the button is disabled
  * @returns {JSX.Element}
  */
 function ProductButton({ product, selected, onClick, disabled }) {

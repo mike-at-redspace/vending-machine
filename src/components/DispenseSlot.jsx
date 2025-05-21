@@ -2,9 +2,10 @@ import React from 'react'
 import OutputSlot from './OutputSlot'
 
 /**
- * DispenseSlot component for displaying dispensed item.
+ * DispenseSlot component for displaying dispensed item
+ *
  * @param {object} props
- * @param {object|null} props.dispensed - The dispensed item object or null.
+ * @param {object|null} props.dispensed - The dispensed item object or null
  */
 export function DispenseSlot({ dispensed }) {
   return (

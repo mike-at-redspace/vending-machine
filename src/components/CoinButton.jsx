@@ -3,6 +3,7 @@ import { createCoin } from '../utils/svgUtils'
 
 /**
  * Coin insertion button for the vending machine.
+ *
  * @param {Object} props
  * @param {string} props.coinType - The type of coin (e.g., 'NICKEL').
  * @param {Function} props.onClick - Click handler.

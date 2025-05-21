@@ -1,12 +1,11 @@
 import formatBalance from '../utils/formatBalance'
 
 /**
- * DisplayPanel component for showing messages and balance.
+ * DisplayPanel component for showing messages to user
  * @param {object} props
- * @param {string} props.msg - The message to display.
- * @param {string} props.textColorClass - Tailwind class for text color.
- * @param {string} props.formatBalance - Function to format the balance.
- * @param {number} props.balance - Current balance.
+ * @param {string} props.msg - The message to display
+ * @param {string} props.textColorClass - Tailwind class for text color
+ * @param {number} props.balance - Current balance
  */
 function DisplayPanel({ msg, textColorClass, balance }) {
   return (

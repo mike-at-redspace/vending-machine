@@ -13,30 +13,30 @@ import beepMp3 from '../assets/mp3/beep.mp3'
 import purchaseMp3 from '../assets/mp3/purchase.mp3'
 
 /**
- * Custom React hook to manage the state and logic of a vending machine.
+ * Custom React hook to manage the state and logic of the vending machine
  *
- * Handles coin deposits, item selection, purchases, cancellations, and change dispensing.
- * Manages audio feedback, user messages, and updates to the vending machine's inventory and coin reserves.
+ * Handles coin deposits, item selection, purchases, cancellations, and change dispensing
+ * Manages audio feedback, user messages, and updates to the vending machine's inventory and coin reserves
  *
  * @returns {Object} Vending machine state and handler functions:
- * @returns {Object} coins - Current coin reserves in the machine.
- * @returns {Object} items - Current inventory of products.
- * @returns {Object} deposit - Coins deposited by the user for the current transaction.
- * @returns {number} balance - Total value of coins deposited by the user (in cents).
- * @returns {string|null} selectedId - ID of the currently selected product, or null if none.
- * @returns {string} msg - Current message to display to the user.
- * @returns {string} msgType - Type of the current message ('info', 'success', 'error').
- * @returns {Object|null} dispensed - Information about the last dispensed item, or null.
- * @returns {Object|null} change - Coins to be returned as change, or null.
- * @returns {boolean} showState - Whether to show the internal state for debugging.
- * @returns {Function} setShowState - Setter for showState.
- * @returns {Function} handleCoin - Handler for depositing a coin. Accepts a coin type string.
- * @returns {Function} handleSelect - Handler for selecting an item. Accepts an item ID.
- * @returns {Function} handleCancel - Handler for cancelling the current transaction.
- * @returns {Function} handlePurchase - Handler for purchasing the selected item.
- * @returns {Object} COIN_CONFIG - Configuration for available coin types.
- * @returns {Array<string>} ORDERED_COIN_TYPES - Coin types ordered by value (descending).
- * @returns {Function} formatBalance - Formats a balance (in cents) as a string.
+ * @returns {Object} coins - Current coin reserves in the machine
+ * @returns {Object} items - Current inventory of products
+ * @returns {Object} deposit - Coins deposited by the user for the current transaction
+ * @returns {number} balance - Total value of coins deposited by the user (in cents)
+ * @returns {string|null} selectedId - ID of the currently selected product, or null if none
+ * @returns {string} msg - Current message to display to the user
+ * @returns {string} msgType - Type of the current message ('info', 'success', 'error')
+ * @returns {Object|null} dispensed - Information about the last dispensed item, or null
+ * @returns {Object|null} change - Coins to be returned as change, or null
+ * @returns {boolean} showState - Whether to show the internal state for debugging
+ * @returns {Function} setShowState - Setter for showState
+ * @returns {Function} handleCoin - Handler for depositing a coin Accepts a coin type string
+ * @returns {Function} handleSelect - Handler for selecting an item Accepts an item ID
+ * @returns {Function} handleCancel - Handler for cancelling the current transaction
+ * @returns {Function} handlePurchase - Handler for purchasing the selected item
+ * @returns {Object} COIN_CONFIG - Configuration for available coin types
+ * @returns {Array<string>} ORDERED_COIN_TYPES - Coin types ordered by value (descending)
+ * @returns {Function} formatBalance - Formats a balance (in cents) as a string
  */
 export function useVendingMachine() {
   const [coins, setCoins] = useState(INITIAL_MACHINE_COINS)

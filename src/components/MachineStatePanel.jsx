@@ -1,15 +1,15 @@
 /**
- * Displays a panel showing the current state of the vending machine, including machine coins,
- * product inventory, and user deposited coins. Allows toggling the visibility of the state panel.
+ * Displays a panel showing the current state of the vending machine, including machine coins
+ * product inventory, and user deposited coins. Allows toggling the visibility of the state panel
  *
  * @component
  * @param {Object} props
- * @param {boolean} props.showState - Whether the machine state panel is visible.
- * @param {function} props.setShowState - Function to toggle the visibility of the state panel.
- * @param {Object} props.coins - Object representing the machine's coin inventory.
- * @param {Object} props.items - Object representing the product inventory, keyed by product ID.
- * @param {Object} props.deposit - Object representing the coins deposited by the user.
- * @returns {JSX.Element} The rendered MachineStatePanel component.
+ * @param {boolean} props.showState - Whether the machine state panel is visible
+ * @param {function} props.setShowState - Function to toggle the visibility of the state panel
+ * @param {Object} props.coins - Object representing the machine's coin inventory
+ * @param {Object} props.items - Object representing the product inventory, keyed by product ID
+ * @param {Object} props.deposit - Object representing the coins deposited by the user
+ * @returns {JSX.Element} The rendered MachineStatePanel component
  */
 function MachineStatePanel({ showState, setShowState, coins, items, deposit }) {
   return (

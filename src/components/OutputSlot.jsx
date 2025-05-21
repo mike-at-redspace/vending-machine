@@ -1,8 +1,9 @@
 /**
- * Output slot for dispensed items or change.
+ * Output slot for dispensed items or change
+ *
  * @param {Object} props
- * @param {string} props.label - Label for the slot.
- * @param {React.ReactNode} props.children - Slot contents.
+ * @param {string} props.label - Label for the slot
+ * @param {React.ReactNode} props.children - Slot contents
  * @returns {JSX.Element}
  */
 function OutputSlot({ label, children }) {
