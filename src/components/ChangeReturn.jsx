@@ -1,22 +1,15 @@
 import OutputSlot from './OutputSlot';
+import { ORDERED_COIN_TYPES, COIN_CONFIG } from '../CONSTANTS';
 import { createCoin } from '../utils/svgUtils';
 
 /**
  * ChangeReturn component for displaying returned change coins.
  * @param {object} props
  * @param {object} props.change - The change object mapping coin types to counts.
- * @param {string[]} props.ORDERED_COIN_TYPES - Array of coin type keys in display order.
- * @param {object} props.COIN_CONFIG - Coin configuration object.
  * @param {number} props.balance - Current balance.
  * @param {string|null} props.selectedId - Currently selected product id.
  */
-function ChangeReturn({
-  change,
-  ORDERED_COIN_TYPES,
-  COIN_CONFIG,
-  balance,
-  selectedId,
-}) {
+function ChangeReturn({ change, balance, selectedId }) {
   return (
     <OutputSlot label="Change Return">
       {change && ORDERED_COIN_TYPES.some((type) => change[type] > 0) ? (

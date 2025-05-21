@@ -2,7 +2,6 @@ import { useState } from 'react';
 import formatBalance from '../utils/formatBalance';
 import {
   INITIAL_PRODUCTS,
-  COIN_CONFIG,
   ORDERED_COIN_TYPES,
   COIN_VALUES,
   INITIAL_DEPOSITED_COINS,
@@ -246,8 +245,6 @@ export function useVendingMachine() {
     handleSelect,
     handleCancel,
     handlePurchase,
-    COIN_CONFIG,
-    ORDERED_COIN_TYPES,
     formatBalance,
   };
 }

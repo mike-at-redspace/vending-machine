@@ -1,15 +1,15 @@
 import CoinButton from './CoinButton';
+import { ORDERED_COIN_TYPES } from '../CONSTANTS';
 
 /**
  * Renders a section for inserting coins, displaying a button for each coin type.
  *
  * @component
  * @param {Object} props - The component props.
- * @param {string[]} props.ORDERED_COIN_TYPES - An array of coin type identifiers to display as buttons.
  * @param {function} props.handleCoin - Callback function invoked when a coin button is clicked, receives the coin type as an argument.
  * @returns {JSX.Element} The rendered CoinSection component.
  */
-function CoinSection({ ORDERED_COIN_TYPES, handleCoin }) {
+function CoinSection({ handleCoin }) {
   return (
     <div className="coin-section">
       <h3 className="coin-section-title">Insert Coins</h3>

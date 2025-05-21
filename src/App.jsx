@@ -46,8 +46,6 @@ function App() {
     handleCancel,
     handlePurchase,
     formatBalance,
-    ORDERED_COIN_TYPES,
-    COIN_CONFIG,
   } = useVendingMachine();
 
   const canPurchase =
@@ -77,10 +75,7 @@ function App() {
           selectedId={selectedId}
           handleSelect={handleSelect}
         />
-        <CoinSection
-          ORDERED_COIN_TYPES={ORDERED_COIN_TYPES}
-          handleCoin={handleCoin}
-        />
+        <CoinSection handleCoin={handleCoin} />
         <PurchaseControls
           canPurchase={canPurchase}
           handlePurchase={handlePurchase}
@@ -91,8 +86,6 @@ function App() {
           <DispenseSlot dispensed={dispensed} />
           <ChangeReturn
             change={change}
-            ORDERED_COIN_TYPES={ORDERED_COIN_TYPES}
-            COIN_CONFIG={COIN_CONFIG}
             balance={balance}
             selectedId={selectedId}
           />

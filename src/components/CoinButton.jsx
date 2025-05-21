@@ -1,4 +1,3 @@
-import React from 'react';
 import { COIN_CONFIG } from '../CONSTANTS';
 import { createCoin } from '../utils/svgUtils';
 
