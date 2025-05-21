@@ -124,7 +124,7 @@ export function useVendingMachine() {
       return
     }
     const returnedAmount = balance
-    let message = 'Transaction cancelled.'
+    let message = 'Transaction cancelled'
     if (returnedAmount > 0) {
       message += `\n${formatBalance(returnedAmount)} returned`
     }

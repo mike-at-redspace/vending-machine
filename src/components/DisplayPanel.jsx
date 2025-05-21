@@ -9,7 +9,7 @@ import formatBalance from '../utils/formatBalance'
  */
 function DisplayPanel({ msg, textColorClass, balance }) {
   return (
-    <div className='bg-gray-800 text-white p-4 rounded-lg shadow-inner text-center'>
+    <div className='display-panel bg-gray-800 text-white p-4 rounded-lg shadow-inner text-center min-h-40 flex flex-col justify-between'>
       <pre
         className={`text-lg sm:text-xl font-medium min-h-[3em] flex items-center justify-center whitespace-pre-wrap ${textColorClass}`}
       >

@@ -11,6 +11,28 @@ body {
     white-space: pre-wrap;
     word-wrap: break-word;
   }
+
+  .display-panel {
+    border-top: 3px solid #000000cc;
+    border-left: 3px solid #000000cc;
+    border-bottom: 1px solid #cfcfcf33;
+    border-right: 1px solid #cfcfcf33;
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px #000000ee inset;
+    pre {
+      text-shadow: 0px 0px 20px #00ffffcc;
+      font-family: 'Digital-7 Mono', monospace;
+      color: #00ffffcc;
+      &.text-red-300 {
+        color: #ff9999cc;
+        text-shadow: 0px 0px 20px #ff0000cc;
+      }
+      &.text-green-300 {
+        color: #00ff77cc;
+        text-shadow: 0px 0px 20px #00ff00cc;
+      }
+    }
+  }
 }
 
 .vending-machine-bg {
