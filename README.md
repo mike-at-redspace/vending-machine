@@ -1,6 +1,10 @@
 # Vending Machine Simulator
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2e1e2b7e-2c3d-4b7a-8e2e-123456789abc/deploy-status)](https://reactjs-vending-machine.netlify.app/)
+
 A modern, interactive vending machine simulator built with React and TailwindCSS. Simulate inserting coins, selecting products, making purchases, and receiving change—all in a sleek, responsive UI.
+
+**Live Demo:** [https://reactjs-vending-machine.netlify.app/](https://reactjs-vending-machine.netlify.app/)
 
 ## Features
 
