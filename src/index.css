@@ -1,0 +1,70 @@
+body {
+  font-family: 'Lato', sans-serif;
+  width: 100%;
+}
+
+#root {
+  pre {
+    font-family: 'Fira Code', monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+}
+
+.vending-machine-bg {
+  background: linear-gradient(145deg, #e2e8f0, #cbd5e0);
+}
+
+.product-card {
+  transition:
+    transform 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(-2px) scale(0.95);
+  }
+
+  &-selected {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5);
+  }
+}
+
+.btn-action,
+.btn-coin {
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+
+  &:hover:not(:disabled),
+  &:active:not(:disabled) {
+    transform: scale(1.05);
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
+
+.dispense-slot-item,
+.change-coin-item {
+  animation: drop 0.5s ease-out;
+}
+
+@keyframes drop {
+  from {
+    transform: translateY(-50px) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
