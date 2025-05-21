@@ -44,7 +44,7 @@ export function useVendingMachine() {
   const [deposit, setDeposit] = useState(INITIAL_DEPOSITED_COINS)
   const [balance, setBalance] = useState(0)
   const [selectedId, setSelectedId] = useState(null)
-  const [msg, setMsg] = useState('Welcome!\nInsert coins or select a product.')
+  const [msg, setMsg] = useState('Welcome!\nInsert coins or select a product')
   const [msgType, setMsgType] = useState('info')
   const [dispensed, setDispensed] = useState(null)
   const [change, setChange] = useState(null)
