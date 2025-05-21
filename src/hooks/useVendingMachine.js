@@ -8,6 +8,9 @@ import {
   INITIAL_MACHINE_COINS
 } from '../CONSTANTS'
 import { useAudio } from './useAudio'
+import coinDropMp3 from '../assets/mp3/coin-drop.mp3'
+import beepMp3 from '../assets/mp3/beep.mp3'
+import purchaseMp3 from '../assets/mp3/purchase.mp3'
 
 /**
  * Custom React hook to manage the state and logic of a vending machine.
@@ -47,9 +50,9 @@ export function useVendingMachine() {
   const [change, setChange] = useState(null)
   const [showState, setShowState] = useState(false)
 
-  const playCoin = useAudio('./src/assets/mp3/coin-drop.mp3')
-  const playBeep = useAudio('./src/assets/mp3/beep.mp3')
-  const playPurchase = useAudio('./src/assets/mp3/purchase.mp3')
+  const playCoin = useAudio(coinDropMp3)
+  const playBeep = useAudio(beepMp3)
+  const playPurchase = useAudio(purchaseMp3)
 
   const displayMsg = (text, type = 'info', duration = null) => {
     setMsg(text)

@@ -69,7 +69,6 @@ function App() {
           formatBalance={formatBalance}
           balance={balance}
         />
-
         <ProductGrid
           items={items}
           selectedId={selectedId}
@@ -81,7 +80,6 @@ function App() {
           handlePurchase={handlePurchase}
           handleCancel={handleCancel}
         />
-
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mt-4'>
           <DispenseSlot dispensed={dispensed} />
           <ChangeReturn
@@ -90,7 +88,6 @@ function App() {
             selectedId={selectedId}
           />
         </div>
-
         <MachineStatePanel
           showState={showState}
           setShowState={setShowState}
