@@ -44,8 +44,7 @@ function App() {
     handleCoin,
     handleSelect,
     handleCancel,
-    handlePurchase,
-    formatBalance
+    handlePurchase
   } = useVendingMachine()
 
   const canPurchase =
@@ -66,7 +65,6 @@ function App() {
         <DisplayPanel
           msg={msg}
           textColorClass={textColorClass}
-          formatBalance={formatBalance}
           balance={balance}
         />
         <ProductGrid
