@@ -17,18 +17,14 @@ function ChangeReturn({ change, balance, selectedId }) {
           Array(change[coinType] || 0)
             .fill(0)
             .map((_, i) => {
-              const coinConfig = COIN_CONFIG[coinType];
+              const { label, svgColor, displaySize } = COIN_CONFIG[coinType];
               return (
                 <div
                   key={`${coinType}-${i}`}
                   className="change-coin-item"
-                  title={`${coinType} (${coinConfig.label})`}
+                  title={`${coinType} (${label})`}
                   dangerouslySetInnerHTML={{
-                    __html: createCoin(
-                      coinConfig.svgColor,
-                      coinConfig.label,
-                      coinConfig.displaySize,
-                    ),
+                    __html: createCoin(svgColor, label, displaySize),
                   }}
                 />
               );
