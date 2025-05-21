@@ -247,7 +247,6 @@ export function useVendingMachine() {
     handleCoin,
     handleSelect,
     handleCancel,
-    handlePurchase,
-    formatBalance
+    handlePurchase
   }
 }
